@@ -57,19 +57,22 @@ int main(int argc, char* argv[])
     }
 
     char line[MAX_LINE];
-    while (fgets(line, sizeof(line), fp)) 
+     while (fgets(line, sizeof(line), fp)) 
+{
+    Measure m;
+    char sensor_name[64]; 
+
+    if (sscanf(line, "%s %ld %[^\n]", sensor_name, &m.timestamp, m.value) == 3) 
     {
-        Measure m;
-        if (sscanf(line, "%ld %[^\n]", &m.timestamp, m.value) == 2) 
+        if (count >= capacity) 
         {
-            if (count >= capacity) 
-            {
-                capacity *= 2;
-                measures = realloc(measures, capacity * sizeof(Measure));
-            }
-            measures[count++] = m;
+            capacity *= 2;
+            measures = realloc(measures, capacity * sizeof(Measure));
         }
+        measures[count++] = m;
     }
+}
+
 
     fclose(fp);
 
