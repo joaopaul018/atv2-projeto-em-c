@@ -22,5 +22,5 @@ Para compilar o programa, use o comando:
 
 ```bash
 gcc -o consulta consulta.c
-./consulta sensor1 1624283952
+./consulta sensor2 1700000052
 
