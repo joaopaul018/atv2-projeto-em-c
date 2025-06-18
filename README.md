@@ -1,7 +1,7 @@
 # Atividade 2 projeto em c
 ## Buscador de Valor por Timestamp para Sensor
 
-Este programa em C permite buscar, para um dado sensor, o valor mais próximo de um timestamp fornecido. Ele utiliza os arquivos .dat, e realiza uma busca para encontrar a medida com o timestamp mais próximo ao informado.
+Este programa em C permite buscar, para um dado sensor, o valor mais próximo de um timestamp fornecido. Ele utiliza os arquivos .dat, e realiza uma busca em arquivos ordenados em ordem decrescente para encontrar a medida com o timestamp mais próximo ao informado.
 
 ---
 
@@ -22,5 +22,12 @@ Para compilar o programa, use o comando:
 
 ```bash
 gcc -o consulta consulta.c
-./consulta sensor2 1700000052
 
+./consulta
+
+Digite o nome do sensor: sensor1
+
+Digite o timestamp desejado: 1700000100
+
+Valor mais próximo do timestamp 1700000100:
+1750106403 8.10
